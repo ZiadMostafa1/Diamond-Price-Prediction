@@ -13,13 +13,18 @@ def predict_diamond_price(input_data):
     return prediction
 
 def main():
+
+    # set page defult mode to light mode
+
+    
+    st.set_page_config(page_title='Diamond Price Prediction App', page_icon='💎')
     st.title('Diamond Price Prediction App 💎')
     
     # Collecting user input for each feature with descriptions
     carat = st.number_input('Carat (Weight of the diamond)', value=1.00, format="%.2f")
-    cut = st.selectbox('Cut (Quality of the cut)', ['Ideal', 'Premium', 'Very Good', 'Good', 'Fair'], index=1)  # Default to 'Premium'
-    color = st.selectbox('Color (Color grade of the diamond)', ['D', 'E', 'F', 'G', 'H', 'I', 'J'], index=3)  # Default to 'G'
-    clarity = st.selectbox('Clarity (Measure of how clear the diamond is)', ['IF', 'VVS1', 'VVS2', 'VS1', 'VS2', 'SI1', 'SI2', 'I1'], index=6)  # Default to 'SI2'
+    cut = st.selectbox('Cut (Quality of the cut)', ['Ideal', 'Premium', 'Very Good', 'Good', 'Fair'], index=1)
+    color = st.selectbox('Color (Color grade of the diamond)', ['D', 'E', 'F', 'G', 'H', 'I', 'J'], index=3)  
+    clarity = st.selectbox('Clarity (Measure of how clear the diamond is)', ['IF', 'VVS1', 'VVS2', 'VS1', 'VS2', 'SI1', 'SI2', 'I1'], index=6)  
     depth = st.number_input('Depth (Depth %, total depth relative to diameter)', value=60.9)
     table = st.number_input('Table (Table %, width of the top of the diamond relative to widest point)', value=50)
     x = st.number_input('X (Length in mm)', value=4.00, format="%.2f")
